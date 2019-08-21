@@ -77,6 +77,7 @@ class Calculator_class {
 //
 /********************************************************************************/
 function main() {
+    // NOTE : define current operation
     while (current_operation !== "x".toUpperCase())
     {
         let calculator_instance = new Calculator_class(); // Get a new calculator instance
@@ -114,16 +115,17 @@ function main() {
             case "CLR":
                 this.update_current_calculation_result(0);
                 break;
+                // clr option shoud be outside of your loop so you aren't prompted to enter first and second number again
         }
         // Print the final calculation total in console for debugging purposes
 
         console.log(`Final Total : ${calculator_instance.get_current_calculation_result()}`);
 
-    else
-    {
-        alert("Bye!")
+    // else // no if statment so why the else statment this broke your code
+    // {
+    //     alert("Bye!")
+    // }
     }
-}
     current_operation = prompt("Enter another math operation to be performed (ADD) (SUB) (MUTL) (DIV) (CLR) or x to quit")
         .toUpperCase();
 }
